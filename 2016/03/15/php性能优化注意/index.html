@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php性能优化注意 | Juve&#39;Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="其实php开发中大部分的性能瓶颈并不在php,而是数据层和架构.但是作为phper,天天写代码,顺手的时候最好养成习惯比较好.">
+<meta name="keywords" content="Linux,php,优化,性能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php性能优化注意">
+<meta property="og:url" content="http://yoursite.com/2016/03/15/php性能优化注意/index.html">
+<meta property="og:site_name" content="Juve&#39;Blog">
+<meta property="og:description" content="其实php开发中大部分的性能瓶颈并不在php,而是数据层和架构.但是作为phper,天天写代码,顺手的时候最好养成习惯比较好.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-14T06:55:07.140Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php性能优化注意">
+<meta name="twitter:description" content="其实php开发中大部分的性能瓶颈并不在php,而是数据层和架构.但是作为phper,天天写代码,顺手的时候最好养成习惯比较好.">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css"> -->
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link href="//fonts.useso.com/css?family=Open+Sans:300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <a href="/" class="logo">Juve&#39;Blog</a>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <nav id="mobile-nav" class="off">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+  <div id="search-form-wrap-mobile">
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+  </div>
+</nav>
+      <div class="outer">
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ANDROID/">ANDROID</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LINUX/">LINUX</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ANDROID-AOSP-Linux-Archlinux/" style="font-size: 10px;">ANDROID,AOSP,Linux,Archlinux,</a> <a href="/tags/Linux-Archlinux-bspwm-窗口管理器-平铺式/" style="font-size: 10px;">Linux,Archlinux,bspwm,窗口管理器,平铺式</a> <a href="/tags/Linux-bugdie-slim/" style="font-size: 10px;">Linux,bugdie,slim</a> <a href="/tags/Linux-php-优化-性能/" style="font-size: 10px;">Linux,php,优化,性能</a> <a href="/tags/chrome-budgie/" style="font-size: 10px;">chrome,budgie</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http:/juvevood.github.io">Juve&#39;s blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+        <section id="main"><article id="post-php性能优化注意" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/15/php性能优化注意/" class="article-date">
+  <time datetime="2016-03-15T11:49:49.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      php性能优化注意
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="其实php开发中大部分的性能瓶颈并不在php-而是数据层和架构-但是作为phper-天天写代码-顺手的时候最好养成习惯比较好"><a href="#其实php开发中大部分的性能瓶颈并不在php-而是数据层和架构-但是作为phper-天天写代码-顺手的时候最好养成习惯比较好" class="headerlink" title="其实php开发中大部分的性能瓶颈并不在php,而是数据层和架构.但是作为phper,天天写代码,顺手的时候最好养成习惯比较好."></a>其实php开发中大部分的性能瓶颈并不在php,而是数据层和架构.但是作为phper,天天写代码,顺手的时候最好养成习惯比较好.</h3><a id="more"></a>
+<hr>
+<h4 id="1-for-foreach-while性能和使用"><a href="#1-for-foreach-while性能和使用" class="headerlink" title="1.for,foreach,while性能和使用"></a>1.for,foreach,while性能和使用</h4><hr>
+<ul>
+<li>for 和foreach其实在小数组里性能其实差不过,用哪个都可以,foreach处理小数组更方便.</li>
+<li>对于大数组,推荐用for,性能更优.另外数组的总数提前计算更好.</li>
+<li>foreach和while, 对于输出或者只读操作foreach更快,而对于有赋值的操作或者有写的操作while则更快.</li>
+</ul>
+<hr>
+<h4 id="2-字符串"><a href="#2-字符串" class="headerlink" title="2.字符串"></a>2.字符串</h4><hr>
+<ul>
+<li>用逗号连接字符串比用点号效率会更高.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"aaaaa"</span>,<span class="string">"bbbbbb"</span>,<span class="string">"ccccccc"</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果字符串里有变量最好使用双引号:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"hell <span class="variable">$name</span>"</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="3-使用memcached或者redis-数据缓存"><a href="#3-使用memcached或者redis-数据缓存" class="headerlink" title="3.使用memcached或者redis(数据缓存)"></a>3.使用memcached或者redis(数据缓存)</h4><hr>
+<ul>
+<li>memcached 适用与高并发且不需要对缓存持久化的场景.能够极大的降低服务器负载的同时提高服务器的响应速度.</li>
+<li>redis 则适合缓存多种数据类型且需要对缓存持久化的场景.缺点是不支持多线程,对cpu效率要求较高.redis还可以做推送的订阅相关的业务(在实际生产环境中不是很稳定,需要考虑命中率问题).</li>
+</ul>
+<h4 id="4-情况比较多的业务逻辑使用switch-case-替换if-else"><a href="#4-情况比较多的业务逻辑使用switch-case-替换if-else" class="headerlink" title="4.情况比较多的业务逻辑使用switch case 替换if else"></a>4.情况比较多的业务逻辑使用switch case 替换if else</h4><ul>
+<li>一个比较权威的说法</li>
+</ul>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">不考虑不同的编译器优化程度差异，假设都是最好的优化，那么<span class="keyword">Switch</span>语句击中第三个选项的时间跟<span class="keyword">if</span>/<span class="keyword">else</span> <span class="keyword">if</span></span><br><span class="line">语句击中第三个选项的时间相同。</span><br><span class="line">击中第一，第二选项的速度<span class="keyword">if</span>语句快，击中第四以及第四之后的选项的速度<span class="keyword">switch</span>语句快。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+        <!--分享-->
+     <!--多说分享-->
+
+<div class="ds-share flat" data-thread-key="2016/03/15/php性能优化注意/" data-title="php性能优化注意" data-url="http://yoursite.com/2016/03/15/php性能优化注意/">
+    <div class="ds-share-inline">
+      <ul class="ds-share-icons-16">
+
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+ <!--end-->
+
+        <!--end-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-php-优化-性能/">Linux,php,优化,性能</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/13/bspwm-平铺式窗口管理器配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          bspwm 平铺式窗口管理器配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/05/budgie桌面-相关问题解决/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">budgie桌面 相关问题解决</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!--评论-->
+
+<section id="comments">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/03/15/php性能优化注意/" data-title="php性能优化注意" data-url="http://yoursite.com/2016/03/15/php性能优化注意/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"juvevood"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+<!--end-->
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="/" class="logo">Juve&#39;Blog</a>
+      &copy; 2018 Juve<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollLoading.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

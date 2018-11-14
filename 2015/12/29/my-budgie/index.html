@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>关于budgie-desktop的配置记录 | Juve&#39;Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首先是我的系统大致介绍 slim archlinux budgie-desktop   slim(是Simple Login Manager（简单登录管理器）的缩写。SLiM是简单、轻量级和容易配置的，相对较易在低端和高端的系统中使用。)">
+<meta name="keywords" content="Linux,bugdie,slim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于budgie-desktop的配置记录">
+<meta property="og:url" content="http://yoursite.com/2015/12/29/my-budgie/index.html">
+<meta property="og:site_name" content="Juve&#39;Blog">
+<meta property="og:description" content="首先是我的系统大致介绍 slim archlinux budgie-desktop   slim(是Simple Login Manager（简单登录管理器）的缩写。SLiM是简单、轻量级和容易配置的，相对较易在低端和高端的系统中使用。)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://orig12.deviantart.net/b3c5/f/2014/303/5/a/namesake_slim_theme_by_fractalmess-d84nd7i.png">
+<meta property="og:image" content="http://yoursite.com/images/mydesktop.png">
+<meta property="og:updated_time" content="2018-11-14T06:55:07.140Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于budgie-desktop的配置记录">
+<meta name="twitter:description" content="首先是我的系统大致介绍 slim archlinux budgie-desktop   slim(是Simple Login Manager（简单登录管理器）的缩写。SLiM是简单、轻量级和容易配置的，相对较易在低端和高端的系统中使用。)">
+<meta name="twitter:image" content="http://orig12.deviantart.net/b3c5/f/2014/303/5/a/namesake_slim_theme_by_fractalmess-d84nd7i.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css"> -->
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link href="//fonts.useso.com/css?family=Open+Sans:300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <a href="/" class="logo">Juve&#39;Blog</a>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <nav id="mobile-nav" class="off">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+  <div id="search-form-wrap-mobile">
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+  </div>
+</nav>
+      <div class="outer">
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ANDROID/">ANDROID</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LINUX/">LINUX</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ANDROID-AOSP-Linux-Archlinux/" style="font-size: 10px;">ANDROID,AOSP,Linux,Archlinux,</a> <a href="/tags/Linux-Archlinux-bspwm-窗口管理器-平铺式/" style="font-size: 10px;">Linux,Archlinux,bspwm,窗口管理器,平铺式</a> <a href="/tags/Linux-bugdie-slim/" style="font-size: 10px;">Linux,bugdie,slim</a> <a href="/tags/Linux-php-优化-性能/" style="font-size: 10px;">Linux,php,优化,性能</a> <a href="/tags/chrome-budgie/" style="font-size: 10px;">chrome,budgie</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http:/juvevood.github.io">Juve&#39;s blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+        <section id="main"><article id="post-my-budgie" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/29/my-budgie/" class="article-date">
+  <time datetime="2015-12-28T16:55:20.000Z" itemprop="datePublished">2015-12-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于budgie-desktop的配置记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="首先是我的系统大致介绍"><a href="#首先是我的系统大致介绍" class="headerlink" title="首先是我的系统大致介绍"></a>首先是我的系统大致介绍</h2><ul>
+<li>slim</li>
+<li>archlinux</li>
+<li>budgie-desktop</li>
+</ul>
+<hr>
+<h2 id="slim"><a href="#slim" class="headerlink" title="slim"></a><strong>slim</strong></h2><h4 id="是Simple-Login-Manager（简单登录管理器）的缩写。SLiM是简单、轻量级和容易配置的，相对较易在低端和高端的系统中使用。"><a href="#是Simple-Login-Manager（简单登录管理器）的缩写。SLiM是简单、轻量级和容易配置的，相对较易在低端和高端的系统中使用。" class="headerlink" title="(是Simple Login Manager（简单登录管理器）的缩写。SLiM是简单、轻量级和容易配置的，相对较易在低端和高端的系统中使用。)"></a>(是Simple Login Manager（简单登录管理器）的缩写。SLiM是简单、轻量级和容易配置的，相对较易在低端和高端的系统中使用。)</h4><a id="more"></a>
+<p>非常好用的一款登录管理器,配置也非常简单而且最重要的是还很漂亮!可以设置主题(在Deviantart网站上有很多漂亮的主题可供下载使用,还可以设置随机主题,每次登录都是不一样的界面).这里推荐一款<a href="http://fractalmess.deviantart.com/art/Namesake-SLiM-Theme-491538078%22%E4%B8%BB%E9%A2%98%22" target="_blank" rel="noopener">主题</a>:如下<br><img src="http://orig12.deviantart.net/b3c5/f/2014/303/5/a/namesake_slim_theme_by_fractalmess-d84nd7i.png" alt="Namesake主题"></p>
+<h4 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法:"></a>安装方法:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S slim 然后设置开机启动 sudo systemctl <span class="built_in">enable</span> slim 即可</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="archlinux"><a href="#archlinux" class="headerlink" title="archlinux"></a><strong>archlinux</strong></h2><h4 id="是一个轻量的、灵活的Linux发行版，遵循K-I-S-S原则"><a href="#是一个轻量的、灵活的Linux发行版，遵循K-I-S-S原则" class="headerlink" title="(是一个轻量的、灵活的Linux发行版，遵循K.I.S.S原则)."></a>(是一个轻量的、灵活的Linux发行版，遵循K.I.S.S原则).</h4><p> 非常好用的一款linux发行版,采用滚动更新.他的包管理器pacman配合AUR使用异常强大,同时也非常的方便洁净,非常适合有洁癖,强迫症开发人员使用.</p>
+<hr>
+<ul>
+<li>至于他的其他优点就不一一介绍,linux只有亲身体会和对比才知道好在哪里.当然这里 不对比各发行版的优缺点,毕竟适合自己,用着方便才最重要.*</li>
+<li><em>archlinux的wiki相当完整,更多帮助请参阅<a href="https://wiki.archlinux.org/" target="_blank" rel="noopener">官方wiki</a>.</em></li>
+</ul>
+<hr>
+<h2 id="budgie-dektop"><a href="#budgie-dektop" class="headerlink" title="budgie-dektop"></a><strong>budgie-dektop</strong></h2><h4 id="隆重介绍这款桌面-采用了仿chromeos的桌面风格-基于gtk3-非常的漂亮-并且继承了gnome的各种优点-说她是基于gtk3其实更多的是基于gnome3-然后自己去掉了gnome3的gnome-shell-然后重写了自己的panel和desktop"><a href="#隆重介绍这款桌面-采用了仿chromeos的桌面风格-基于gtk3-非常的漂亮-并且继承了gnome的各种优点-说她是基于gtk3其实更多的是基于gnome3-然后自己去掉了gnome3的gnome-shell-然后重写了自己的panel和desktop" class="headerlink" title="(隆重介绍这款桌面,采用了仿chromeos的桌面风格,基于gtk3,非常的漂亮,并且继承了gnome的各种优点.说她是基于gtk3其实更多的是基于gnome3.然后自己去掉了gnome3的gnome-shell,然后重写了自己的panel和desktop.)"></a>(隆重介绍这款桌面,采用了仿chromeos的桌面风格,基于gtk3,非常的漂亮,并且继承了gnome的各种优点.说她是基于gtk3其实更多的是基于gnome3.然后自己去掉了gnome3的gnome-shell,然后重写了自己的panel和desktop.)</h4><p>上个图:<br><img src="/images/mydesktop.png" alt="我的桌面"></p>
+<hr>
+<ul>
+<li><em>配合plank使用效果更佳!</em></li>
+<li><em>这里要说的是budgie-desktop更新到10.1后以前的budgie-seesion变成了budgie-desktop,需要在slim的配置文件里最更改,否则无法启动.</em></li>
+<li>*安装方法很简单,aur里有</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt -S budgie-desktop</span><br></pre></td></tr></table></figure>
+<hr>
+<h6 id="好了介绍就到这里-自行体验吧"><a href="#好了介绍就到这里-自行体验吧" class="headerlink" title="好了介绍就到这里,自行体验吧^.^"></a>好了介绍就到这里,自行体验吧^.^</h6>
+      
+    </div>
+    <footer class="article-footer">
+        <!--分享-->
+     <!--多说分享-->
+
+<div class="ds-share flat" data-thread-key="2015/12/29/my-budgie/" data-title="关于budgie-desktop的配置记录" data-url="http://yoursite.com/2015/12/29/my-budgie/">
+    <div class="ds-share-inline">
+      <ul class="ds-share-icons-16">
+
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+ <!--end-->
+
+        <!--end-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-bugdie-slim/">Linux,bugdie,slim</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/05/budgie桌面-相关问题解决/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          budgie桌面 相关问题解决
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!--评论-->
+
+<section id="comments">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015/12/29/my-budgie/" data-title="关于budgie-desktop的配置记录" data-url="http://yoursite.com/2015/12/29/my-budgie/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"juvevood"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+<!--end-->
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="/" class="logo">Juve&#39;Blog</a>
+      &copy; 2018 Juve<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollLoading.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

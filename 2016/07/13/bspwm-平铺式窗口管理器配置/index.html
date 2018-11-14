@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>bspwm 平铺式窗口管理器配置 | Juve&#39;Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="bspwm is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for EWMH and multiple monitors, and is configured and controlled through messages. —From a">
+<meta name="keywords" content="Linux,Archlinux,bspwm,窗口管理器,平铺式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bspwm 平铺式窗口管理器配置">
+<meta property="og:url" content="http://yoursite.com/2016/07/13/bspwm-平铺式窗口管理器配置/index.html">
+<meta property="og:site_name" content="Juve&#39;Blog">
+<meta property="og:description" content="bspwm is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for EWMH and multiple monitors, and is configured and controlled through messages. —From a">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/bbbbb.png">
+<meta property="og:updated_time" content="2018-11-14T06:55:07.123Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bspwm 平铺式窗口管理器配置">
+<meta name="twitter:description" content="bspwm is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for EWMH and multiple monitors, and is configured and controlled through messages. —From a">
+<meta name="twitter:image" content="http://yoursite.com/images/bbbbb.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css"> -->
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link href="//fonts.useso.com/css?family=Open+Sans:300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <a href="/" class="logo">Juve&#39;Blog</a>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <nav id="mobile-nav" class="off">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+  <div id="search-form-wrap-mobile">
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+  </div>
+</nav>
+      <div class="outer">
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ANDROID/">ANDROID</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LINUX/">LINUX</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ANDROID-AOSP-Linux-Archlinux/" style="font-size: 10px;">ANDROID,AOSP,Linux,Archlinux,</a> <a href="/tags/Linux-Archlinux-bspwm-窗口管理器-平铺式/" style="font-size: 10px;">Linux,Archlinux,bspwm,窗口管理器,平铺式</a> <a href="/tags/Linux-bugdie-slim/" style="font-size: 10px;">Linux,bugdie,slim</a> <a href="/tags/Linux-php-优化-性能/" style="font-size: 10px;">Linux,php,优化,性能</a> <a href="/tags/chrome-budgie/" style="font-size: 10px;">chrome,budgie</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http:/juvevood.github.io">Juve&#39;s blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+        <section id="main"><article id="post-bspwm-平铺式窗口管理器配置" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/13/bspwm-平铺式窗口管理器配置/" class="article-date">
+  <time datetime="2016-07-13T14:38:42.000Z" itemprop="datePublished">2016-07-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LINUX/">LINUX</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      bspwm 平铺式窗口管理器配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>bspwm is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for EWMH and multiple monitors, and is configured and controlled through messages. —From archlinux wiki.</p>
+<a id="more"></a>
+<hr>
+<h3 id="bspwm-和i3wm，openbox-以及其他众多平铺式窗口管理器一样都是比较简洁易配置的窗口管理器。比较适合强迫症和有洁癖的人使用，当然有的人觉得这样的linux才是真正的沉侵式体验。"><a href="#bspwm-和i3wm，openbox-以及其他众多平铺式窗口管理器一样都是比较简洁易配置的窗口管理器。比较适合强迫症和有洁癖的人使用，当然有的人觉得这样的linux才是真正的沉侵式体验。" class="headerlink" title="bspwm 和i3wm，openbox 以及其他众多平铺式窗口管理器一样都是比较简洁易配置的窗口管理器。比较适合强迫症和有洁癖的人使用，当然有的人觉得这样的linux才是真正的沉侵式体验。"></a>bspwm 和i3wm，openbox 以及其他众多平铺式窗口管理器一样都是比较简洁易配置的窗口管理器。比较适合强迫症和有洁癖的人使用，当然有的人觉得这样的linux才是真正的沉侵式体验。</h3><hr>
+<ul>
+<li>折腾了下i3和bspwm 这两个都是比较容易配置的窗口管理器（如果有人折腾了openbox或者其他的wm欢迎补充，下面上个bspwm+lemonbar的图，并贴下大概的配置）。<br><img src="/images/bbbbb.png" alt="我的bspwm"></li>
+</ul>
+<hr>
+<ul>
+<li>贴下配置</li>
+<li>lemonbar，我分成了三个文件，另外因为我是台式机，所以我把电池去掉了。需要的话自己搜索折腾下</li>
+<li>1.panel文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">source</span> ~/.config/bspwm/lemonbar/setup</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span></span><br><span class="line"><span class="comment"># echo $! &gt; pid</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"%&#123;U#FCFCFC&#125;%&#123;B<span class="variable">$COLOR_HIGHLIGHT</span> F<span class="variable">$COLOR_TEXT_HIGHLIGHT</span>&#125;<span class="variable">$(power)</span>%&#123;B- F-&#125;<span class="variable">$(workspace)</span><span class="variable">$(title)</span>%&#123;r&#125;<span class="variable">$(volume)</span><span class="variable">$(network)</span>%&#123;B<span class="variable">$COLOR_HIGHLIGHT</span> F<span class="variable">$COLOR_TEXT_HIGHLIGHT</span>&#125;<span class="variable">$(clock)</span>%&#123;B- F-&#125;"</span></span><br><span class="line">sleep 5s</span><br><span class="line"><span class="keyword">done</span> |</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lemonbar -p\</span><br><span class="line">-g x<span class="variable">$PANEL_HEIGHT</span>\</span><br><span class="line">-B <span class="string">"<span class="variable">$COLOR_BACKGROUND</span>"</span>\</span><br><span class="line">-F <span class="string">"<span class="variable">$COLOR_FOREGROUND</span>"</span>\</span><br><span class="line">-u 4\</span><br><span class="line">-U <span class="string">"#FCFCFC"</span>\</span><br><span class="line">-f <span class="string">"<span class="variable">$PANEL_FONT_FAMILY</span>"</span>\</span><br><span class="line">-f <span class="string">"<span class="variable">$ICON_FONT</span>"</span> | bash</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>2.setup文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PANEL_FIFO=/tmp/panel-fifo</span><br><span class="line">PANEL_HEIGHT=28</span><br><span class="line"><span class="comment"># PANEL_FONT_FAMILY="CamingoCode:size=9"</span></span><br><span class="line">PANEL_FONT_FAMILY=<span class="string">"hack:size=8"</span></span><br><span class="line"><span class="comment">#ICON_FONT2="typicons:size=11"</span></span><br><span class="line">ICON_FONT=<span class="string">"MaterialIcons:size=8"</span></span><br><span class="line">COLOR_BACKGROUND=<span class="string">"#0F0F0F"</span></span><br><span class="line">COLOR_FOREGROUND=<span class="string">"#FCFCFC"</span></span><br><span class="line">COLOR_HIGHLIGHT=<span class="string">"#0F0F0F"</span></span><br><span class="line">COLOR_TEXT_HIGHLIGHT=<span class="string">"#FFFFFF"</span></span><br><span class="line">UPDATE=<span class="string">"~/.config/bspwm/lemonbar/update"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ $(pgrep -cx panel) -gt 2 ] ; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">"%s\n"</span> <span class="string">"The panel is already running."</span> &gt;&amp;2</span><br><span class="line"><span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">trap</span> <span class="string">'trap - TERM; kill 0'</span> INT TERM QUIT EXIT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Power button</span></span><br><span class="line"><span class="function"><span class="title">power</span></span>()&#123;</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">'%&#123;A:oblogout:&#125; \uE8AC %&#123;A&#125;'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Clock</span></span><br><span class="line"><span class="function"><span class="title">clock</span></span>()&#123;</span><br><span class="line">TIME=$(date <span class="string">"+%a %d %b %H:%M"</span>)</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">'\uE924'</span> <span class="variable">$TIME</span> <span class="string">' '</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Networking</span></span><br><span class="line"><span class="function"><span class="title">network</span></span>()&#123;</span><br><span class="line">NETSTATUS=$(ping -c 1 111.13.101.208 &gt;/dev/null 2&gt;&amp;1 &amp;&amp; <span class="built_in">echo</span> <span class="string">"UP"</span> || <span class="built_in">echo</span> <span class="string">"DOWN"</span>)</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$NETSTATUS</span> = <span class="string">'UP'</span> ]; <span class="keyword">then</span></span><br><span class="line">icon=<span class="string">'\ue1b9'</span></span><br><span class="line">ssid=<span class="string">''</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">icon=<span class="string">'\ue1cf'</span></span><br><span class="line">ssid=<span class="string">''</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="variable">$icon</span> <span class="variable">$ssid</span> <span class="string">' '</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Volume</span></span><br><span class="line"><span class="function"><span class="title">volume</span></span>()&#123;</span><br><span class="line">vol=$(amixer get Master | grep % | sed -n 1p | awk -F <span class="string">'['</span> <span class="string">'&#123;print $2&#125;'</span> | awk -F <span class="string">']'</span> <span class="string">'&#123;print $1&#125;'</span> | sed s/%//)</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$vol</span> = 0 ]; <span class="keyword">then</span></span><br><span class="line">icon=<span class="string">'\uE04F'</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$vol</span> -lt 33 ]; <span class="keyword">then</span></span><br><span class="line">icon=<span class="string">'\uE04E'</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$vol</span> -lt 66 ]; <span class="keyword">then</span></span><br><span class="line">icon=<span class="string">'\uE04D'</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">icon=<span class="string">'\uE050'</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"%&#123;A4:amixer -q set Master 5%+ &amp;&amp; <span class="variable">$&#123;UPDATE&#125;</span>:&#125;%&#123;A5:amixer -q set Master 5%- &amp;&amp; <span class="variable">$&#123;UPDATE&#125;</span>:&#125; "</span> <span class="variable">$icon</span> <span class="variable">$vol</span><span class="string">'%'</span> <span class="string">' %&#123;A&#125;%&#123;A&#125;'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Workspace</span></span><br><span class="line"><span class="function"><span class="title">workspace</span></span>() &#123;</span><br><span class="line">wslist=$(\</span><br><span class="line">wmctrl -d \</span><br><span class="line">| awk <span class="string">'/ / &#123;print $2 $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20&#125;'</span> ORS=<span class="string">''</span>\</span><br><span class="line">| sed -e <span class="string">'s/\s* //g'</span> \</span><br><span class="line">-e <span class="string">'s/\*[ 0-9A-Za-z]*[^ -~]*/\\uE3FA /g'</span> \</span><br><span class="line">-e <span class="string">'s/\-[ 0-9A-Za-z]*[^ -~]*/%&#123;A:i3-msg workspace &amp; \&amp;\&amp; \~\/.config\/lemonbar\/update:&#125;\\uE836 %&#123;A&#125;/g'</span> \</span><br><span class="line">-e <span class="string">'s/\*//g'</span> \</span><br><span class="line">-e <span class="string">'s/ -/ /g'</span> \</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (( $(wmctrl -d | wc -l) == 10)); <span class="keyword">then</span></span><br><span class="line">new=<span class="string">""</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">new=$(\</span><br><span class="line">wmctrl -d\</span><br><span class="line">| rev\</span><br><span class="line">| cut -c 1\</span><br><span class="line">| awk -v RS=<span class="string">'\\s+'</span> <span class="string">'&#123; a[$1] &#125; END &#123; for(i = 1; i in a; ++i); print i &#125;'</span>\</span><br><span class="line">)</span><br><span class="line">new=<span class="string">"%&#123;A:i3-msg workspace <span class="variable">$new</span> &amp;&amp; <span class="variable">$&#123;UPDATE&#125;</span>:&#125;\uE3BA%&#123;A&#125;"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -n -e <span class="string">" <span class="variable">$wslist</span><span class="variable">$new</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">title</span></span>()&#123;</span><br><span class="line">title=$(xdotool getactivewindow getwindowname)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">" [<span class="variable">$title</span>]"</span> | cut -c 1-70</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>3.update文件(如果不kill的话panel或直接僵死掉，目前也并不是完美的，依然有几率会出现panel僵死，求解决办法)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">TODO:</span> make this less hacky.</span></span><br><span class="line">pkill -f <span class="string">"sleep 5s"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更多配置请参考 <a href="https://plus.google.com/s/bspwm/top" target="_blank" rel="noopener">google+</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+        <!--分享-->
+     <!--多说分享-->
+
+<div class="ds-share flat" data-thread-key="2016/07/13/bspwm-平铺式窗口管理器配置/" data-title="bspwm 平铺式窗口管理器配置" data-url="http://yoursite.com/2016/07/13/bspwm-平铺式窗口管理器配置/">
+    <div class="ds-share-inline">
+      <ul class="ds-share-icons-16">
+
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+ <!--end-->
+
+        <!--end-->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-Archlinux-bspwm-窗口管理器-平铺式/">Linux,Archlinux,bspwm,窗口管理器,平铺式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/14/AOSP-在Archlinux-下编译记录/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AOSP 在Archlinux 下编译记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/15/php性能优化注意/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">php性能优化注意</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!--评论-->
+
+<section id="comments">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/07/13/bspwm-平铺式窗口管理器配置/" data-title="bspwm 平铺式窗口管理器配置" data-url="http://yoursite.com/2016/07/13/bspwm-平铺式窗口管理器配置/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"juvevood"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+<!--end-->
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="/" class="logo">Juve&#39;Blog</a>
+      &copy; 2018 Juve<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollLoading.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
